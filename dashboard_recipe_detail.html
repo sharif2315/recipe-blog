@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Blog - Recipe</title>
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+  <body>
+
+    <div class="sidebar_nav_container">
+
+      <!-- SIDEBAR -->
+       <section class="sidebar">
+        
+        <!-- HEADER -->
+        <div class="sidebar_header">
+          <h2 class="sidebar_title">The Intentional Cook</h2>
+          <h2 class="sidebar_subtitle">Admin Dashboard</h2>
+        </div>
+
+        <!-- LINKS -->
+        <div class="dashboard_links">
+
+          <a class="dashboard_link active_link" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-dashboard-icon lucide-layout-dashboard"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+            <p>Dashboard</p>
+          </a>
+
+          <a class="dashboard_link" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text-icon lucide-book-open-text"><path d="M12 7v14"/><path d="M16 12h2"/><path d="M16 8h2"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/><path d="M6 12h2"/><path d="M6 8h2"/></svg>
+            <p>Recipes</p>
+          </a>
+
+          <a class="dashboard_link" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shapes-icon lucide-shapes"><path d="M8.3 10a.7.7 0 0 1-.626-1.079L11.4 3a.7.7 0 0 1 1.198-.043L16.3 8.9a.7.7 0 0 1-.572 1.1Z"/><rect x="3" y="14" width="7" height="7" rx="1"/><circle cx="17.5" cy="17.5" r="3.5"/></svg>
+            <p>Categories</p>
+          </a>
+
+        </div>
+
+
+       </section>
+      
+
+       <div class="admin_nav_and_content_container">
+
+        <!-- NAV -->
+         <section class="nav admin_nav">
+
+          <div class="sidebar_btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>            
+          </div>
+     
+           <!-- icons group -->
+           <div class="nav-icons-flex-group">
+             <!-- Search Icon -->
+             <div>
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>            
+             </div>
+     
+             <!-- Account links -->
+             <div class="profile-dropdown">
+               <!-- Hidden checkbox that handles the toggle state -->
+               <input type="checkbox" id="profile-menu-toggle" class="dropdown-toggle" />
+               
+               <!-- Label acts as the trigger button. It is linked to the checkbox -->
+               <label for="profile-menu-toggle" class="profile-trigger" tabindex="0">
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                   <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                   <circle cx="12" cy="7" r="4"></circle>
+                 </svg>
+               </label>
+     
+               <!-- Invisible click-away overlay to close the menu when clicking outside -->
+               <label for="profile-menu-toggle" class="dropdown-overlay"></label>
+     
+               <!-- The Popover Menu -->
+               <div class="dropdown-menu">
+                 <div class="popover-header">Account</div>
+                 <ul class="popover-links">
+                   <li>
+                     <a href="/signin">
+                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3"/></svg>
+                       Sign Out
+                     </a>
+                   </li>
+                 </ul>
+               </div>
+             </div> 
+        
+           </div>
+         </section>
+
+         <!-- CONTENT -->
+         <div class="admin_content_container">
+
+          <!-- header: breadcrumbs, title & buttons container -->
+          <div class="breadcrumbs_title_buttons_container">
+
+            <!-- breadcrumbs & title -->
+            <div>
+
+              <div class="recipe__breadcrumbs">
+                <p>Recipes</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="recipe__breadcrumb_icon"><path d="m9 18 6-6-6-6"/></svg>
+                <p class="recipe__breadcrumbs__category_name">Some Category</p>
+              </div>
+
+              <div class="recipe__title">Edit Recipe: Sourdough Boule</div>
+            </div>
+
+            <!-- buttons group-->
+             <div class="recipe_header__buttons_group">
+              
+              <div class="recipe__back_link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="recipe__back_link_text_icon"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+                <p class="recipe__back_link_text">Back to List</p>                
+              </div>
+
+              <div class="recipe__delete_btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="recipe__delete_btn_icon"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                <p class="recipe__delete_btn_text">Delete Recipe</p>
+              </div>
+
+              <div class="recipe__save_btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="recipe__save_btn_icon"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg>
+                <p class="recipe__save_btn_text">Save Changes</p>
+              </div>
+
+             </div>
+
+          </div>
+
+          <!-- recipe content: 2 column grid -->
+          <div class="recipe__edit_content">
+            <!-- col 1 -->
+            <div class="recipe__content__col_1">
+              <!-- general info -->
+              <div class="section__general_info recipe_content_section">
+                
+                <p class="general_info__header">General Information</p>
+
+                <div class="general_info__recipe_title general_info_input_group">
+                  <label for="title">Recipe Title</label>
+                  <input type="text" name="title" name="title" value="Sourdough Boule">
+                </div>
+
+                <div class="general_info__recipe_cetegory general_info_input_group">
+                  <label for="category">category</label>
+                  <input type="text" value="Some Category" name="category">
+                </div>
+
+                <div class="general_info__recipe_description general_info_input_group">
+                  <label for="description">Description</label>
+                  <textarea rows="4" name="description" class="">A cornerstone of artisanal baking, this heirloom sourdough focuses on long fermentation and stone-ground heritage grains to produce a deep, complex crumb and a blistered, amber crust. This 72-hour process rewards patience with a loaf that embodies the quiet confidence of traditional craft.
+                  </textarea>
+                </div>
+              </div>
+
+
+              <!-- ingredients -->
+              <div class="section__ingredients recipe_content_section">
+
+                <!-- header -->
+                <div class="ingredients__header">
+                  <p class="recipe_content_subtitle">Ingredients</p>
+                  <div class="add_ingredient_container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="add_icon"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+                    <p class="recipe_content_subtitle">Add Ingredient</p>
+                  </div>
+                </div>
+                
+                <!-- ingredients -->
+                <div class="ingredients__list">
+                  
+                  <!-- Ingredient 1 -->
+                  <div class="ingredient">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grip_icon"><circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/></svg>
+                    <input type="text" name="" value="500g of Stone-ground Bread Flour">
+                  </div>
+                  <!-- Ingredient 1 -->
+                  <div class="ingredient">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grip_icon"><circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/></svg>
+                    <input type="text" name="" value="500g of Stone-ground Bread Flour">
+                  </div>
+                  <!-- Ingredient 1 -->
+                  <div class="ingredient">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grip_icon"><circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/></svg>
+                    <input type="text" name="" value="500g of Stone-ground Bread Flour">
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- preparation steps -->
+              <div class="section__steps recipe_content_section">
+                
+                <div class="preparation__header">
+                  
+                  <p class="recipe_content_subtitle">Preparation Steps</p>
+                  
+                  <div class="add_step__container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="add_icon"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>                    
+                    <p class="recipe_content_subtitle">Add Step</p>
+                  </div>
+
+                </div>
+
+                <div class="steps__listing">
+                  
+                  <!-- Step 1 -->
+                  <div class="preparation__step">
+                    <!-- col 1 -->
+                    <div class="step__number">
+                      <p>01</p>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grip_icon"><circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/></svg>                      
+                    </div>
+                    <!-- col 2 -->
+                     <div class="step__instruction">
+                      <input type="text" name="" class="step__title" value="Autolyse">
+                      <textarea rows="3" name="" class="step__detail">Combine flour and water in a ceramic bowl. Mix until no dry flour remains. Cover with a damp cloth and rest for 2 hours to allow gluten development to begin naturally.</textarea>
+                     </div>
+                  </div>
+
+                  <!-- Step 2 -->
+                  <div class="preparation__step">
+                    <!-- col 1 -->
+                    <div class="step__number">
+                      <p>02</p>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grip_icon"><circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/></svg>     
+                    </div>
+                    <!-- col 2 -->
+                     <div class="step__instruction">
+                      <input type="text" name="" class="step__title" value="Autolyse">
+                      <textarea rows="3" name="" class="step__detail">Combine flour and water in a ceramic bowl. Mix until no dry flour remains. Cover with a damp cloth and rest for 2 hours to allow gluten development to begin naturally.</textarea>
+                     </div>
+                  </div>
+
+                  <!-- Step 3 -->
+                  <div class="preparation__step">
+                    <!-- col 1 -->
+                    <div class="step__number">
+                      <p>03</p>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grip_icon"><circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/></svg>                           
+                    </div>
+                    <!-- col 2 -->
+                     <div class="step__instruction">
+                      <input type="text" name="" class="step__title" value="Autolyse">
+                      <textarea rows="3" name="" class="step__detail">Combine flour and water in a ceramic bowl. Mix until no dry flour remains. Cover with a damp cloth and rest for 2 hours to allow gluten development to begin naturally.</textarea>
+                     </div>
+                  </div>
+
+                  <!-- Step 2, .... -->
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- col 2 -->
+            <div class="recipe__content__col_2">
+              <!-- complexity & time -->
+               <div class="section__complexity_time recipe_content_section">
+                <p class="recipe_content_subtitle">Complexity & Time</p>
+
+                <div class="time_difficulty_input_groups">
+                  
+                  
+                  <div class="preparation_time_container">
+                    <label for="prepare_time">Preparation Time</label>
+                    <input type="text" name="prepare_time" class="preparation_time_input" value="72 hrs">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-clock-icon"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> -->
+                  </div>
+
+                  <div class="difficulty_input_container">
+                    <label for="difficulty">Difficulty Level</label>
+                    <select name="" id="">
+                      <option value="Beginner">Beginner</option>
+                      <option value="Medium">Medium</option>
+                      <option value="Advanced">Advanced</option>
+                    </select>
+                  </div>
+
+                </div>
+               </div>
+
+              <!-- Recipe Image -->
+               <div class="section__recipe_image recipe_content_section">
+                <p class="recipe_image__heading recipe_content_subtitle">Recipe Image</p>
+
+                <div class="recipe_image__outer">
+                  <div class="recipe_image__inner">
+
+                    <img class="recipe_image" src="/src/assets/bread-2.jpg" alt="">
+
+                    <div class="recipe_image__overlay">
+                      <span class="recipe_image__overlay__camera">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-camera-icon lucide-camera"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"/><circle cx="12" cy="13" r="3"/></svg>
+                      </span>
+                      <span class="recipe_image__overlay__subtitle">Change Image</span>
+
+                    </div>
+
+                  </div>
+                </div>
+
+                <p class="recipe_image_subtext">Maximum file size: 2MB.</p>
+               </div>
+
+            </div>
+
+          </div>
+
+         </div>
+
+       </div>
+
+
+
+    </div>
+
+
+  <!-- Modal -->
+  <!-- <script>
+    const dialog = document.querySelector(".recipe_update_modal")
+
+    dialog.showModal()
+
+    dialog.addEventListener("click", e => {
+        const dialogDimensions = dialog.getBoundingClientRect();
+
+        if (
+          e.clientX < dialogDimensions.left ||
+          e.clientX < dialogDimensions.right ||
+          e.clientX < dialogDimensions.top ||
+          e.clientX < dialogDimensions.bottom
+        ){
+          dialog.close()
+        };
+    })    
+  </script> -->
+
+
+  </body>
+</html>
