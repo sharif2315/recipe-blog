@@ -1200,21 +1200,12 @@ body {
 .preparation__step {
   display: flex;
   gap: 2rem;
-  /* justify-content: flex-start; */
 }
-
-/* .preparation__step > * {
-  outline: 1px solid red;
-} */
 
 .step__number {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
-
-.step__number > * {
-  /* outline: 1px solid red; */
 }
 
 .step__number p {
