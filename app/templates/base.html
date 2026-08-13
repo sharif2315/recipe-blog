@@ -1,24 +1,44 @@
 <!doctype html>
-<title>{% block title %}{% endblock %} - Flaskr</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-<nav>
-  <h1>Flaskr</h1>
-  <ul>
-    {% if g.user %}
-      <li><span>{{ g.user['username'] }}</span>
-      <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
-    {% else %}
-      <li><a href="{{ url_for('auth.register') }}">Register</a>
-      <li><a href="{{ url_for('auth.login') }}">Log In</a>
-    {% endif %}
-  </ul>
-</nav>
-<section class="content">
-  <header>
-    {% block header %}{% endblock %}
-  </header>
-  {% for message in get_flashed_messages() %}
-    <div class="flash">{{ message }}</div>
-  {% endfor %}
-  {% block content %}{% endblock %}
-</section>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base_style.css') }}">
+  </head>
+  <body>
+    
+    <div>
+
+      <!-- NAV -->
+      <section class="nav">
+        <!-- logo and navlinks -->
+        <div class="title-navlinks-flex-group">
+          <h3 class="nav__title">The Intentional Cook</h3>
+          <ul class="nav__links">
+            <li><a href="#">Recipes</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+
+        <!-- icons group -->
+        <div class="nav-icons-flex-group">
+          <!-- Search Icon -->
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>            
+          </div>
+          <!-- Account Icon -->
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-user-icon lucide-circle-user"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/></svg>
+          </div>
+        </div>
+      </section>
+
+      {% block content %}
+      {% endblock content%}
+       
+    </div>
+
+  </body>
+</html>

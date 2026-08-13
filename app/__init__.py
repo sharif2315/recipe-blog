@@ -26,7 +26,7 @@ def create_app(test_config=None):
 
     @app.route('/recipes')
     def recipes_list():
-        return render_template('recipe_list.html')
+        return render_template('recipes_list.html')
 
     @app.route('/recipe/<int:post_id>')
     def recipe_detail(post_id):
