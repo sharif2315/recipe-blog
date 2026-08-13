@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Blog - Recipe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base_style.css') }}">
+  </head>
+  <body>
+
+    <div class="sidebar_nav_container">
+
+      <!-- SIDEBAR -->
+       <section class="sidebar">
+        
+        <!-- HEADER -->
+        <div class="sidebar_header">
+          <h2 class="sidebar_title">The Intentional Cook</h2>
+          <h2 class="sidebar_subtitle">Admin Dashboard</h2>
+        </div>
+
+        <!-- LINKS -->
+        <div class="dashboard_links">
+
+          <a class="dashboard_link active_link" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-dashboard-icon lucide-layout-dashboard"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+            <p>Dashboard</p>
+          </a>
+
+          <a class="dashboard_link" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text-icon lucide-book-open-text"><path d="M12 7v14"/><path d="M16 12h2"/><path d="M16 8h2"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/><path d="M6 12h2"/><path d="M6 8h2"/></svg>
+            <p>Recipes</p>
+          </a>
+
+          <a class="dashboard_link" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shapes-icon lucide-shapes"><path d="M8.3 10a.7.7 0 0 1-.626-1.079L11.4 3a.7.7 0 0 1 1.198-.043L16.3 8.9a.7.7 0 0 1-.572 1.1Z"/><rect x="3" y="14" width="7" height="7" rx="1"/><circle cx="17.5" cy="17.5" r="3.5"/></svg>
+            <p>Categories</p>
+          </a>
+
+        </div>
+
+
+       </section>
+      
+
+       <div class="admin_nav_and_content_container">
+
+        <!-- NAV -->
+         <section class="nav admin_nav">
+
+          <div class="sidebar_btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>            
+          </div>
+     
+           <!-- icons group -->
+           <div class="nav-icons-flex-group">
+             <!-- Search Icon -->
+             <div>
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>            
+             </div>
+     
+             <!-- Account links -->
+             <div class="profile-dropdown">
+               <!-- Hidden checkbox that handles the toggle state -->
+               <input type="checkbox" id="profile-menu-toggle" class="dropdown-toggle" />
+               
+               <!-- Label acts as the trigger button. It is linked to the checkbox -->
+               <label for="profile-menu-toggle" class="profile-trigger" tabindex="0">
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                   <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                   <circle cx="12" cy="7" r="4"></circle>
+                 </svg>
+               </label>
+     
+               <!-- Invisible click-away overlay to close the menu when clicking outside -->
+               <label for="profile-menu-toggle" class="dropdown-overlay"></label>
+     
+               <!-- The Popover Menu -->
+               <div class="dropdown-menu">
+                 <div class="popover-header">Account</div>
+                 <ul class="popover-links">
+                   <li>
+                     <a href="/signin">
+                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3"/></svg>
+                       Sign Out
+                     </a>
+                   </li>
+                 </ul>
+               </div>
+             </div> 
+        
+           </div>
+         </section>
+
+         {% block content %}
+         {% endblock content%}
+
+       </div>
+
+
+
+    </div>
+
+
+  {% block extra_javascript %}
+  {% endblock extra_javascript %}
+
+  </body>
+</html>

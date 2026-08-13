@@ -28,10 +28,18 @@ def create_app(test_config=None):
     def recipes_list():
         return render_template('recipes_list.html')
 
-    @app.route('/recipe/<int:post_id>')
-    def recipe_detail(post_id):
+    @app.route('/recipe/<int:recipe_id>')
+    def recipe_detail(recipe_id):
         # TODO: use post_id to fetch post from db
         return render_template('recipe_detail.html')
+
+    @app.route('/dashboard')
+    def dashboard_home():
+        return render_template('dashboard/index.html')
+
+    @app.route('/dashboard/<int:recipe_id>')
+    def dashboard_recipe_detail(recipe_id):
+        return render_template('dashboard/recipe_detail.html')
 
     from . import db
     db.init_app(app)
