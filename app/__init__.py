@@ -21,9 +21,17 @@ def create_app(test_config=None):
 
     # a simple page that says hello
     @app.route('/')
-    def hello():
+    def home():
         return render_template('index.html')
-        # return 'Hello, World!'
+
+    @app.route('/recipes')
+    def recipes_list():
+        return render_template('recipe_list.html')
+
+    @app.route('/recipe/:<int:post_id>')
+    def recipe_detail(post_id):
+        # TODO: use post_id to fetch post from db
+        return render_template('recipe_detail.html')
 
     from . import db
     db.init_app(app)
