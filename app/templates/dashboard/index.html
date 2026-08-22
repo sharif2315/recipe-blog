@@ -13,176 +13,193 @@
 
   <div class="recipes_grid">
 
-    <div class="recipe_card">
+    <a href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
+      <div class="recipe_card">
+
+        <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
+
+        <div class="recipe_card_info_container">
+          <h5 class="recipe_card_category">Mains & Galettes</h5>
+          <h4 class="recipe_card_title">Heirloom Tomato Galette</h4>
+          <p class="recipe_card_time">Oct 12, 2023 • 45 mins</p>
+
+          <div class="recipe_card_icons_flex_group">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+
+          </div>
+
+          <!-- Recipe Update Modal -->
+          <!-- <dialog class="recipe_update_modal">
+            <span>Recipe Update Modal</span>
+            <form action="">
+              <input type="text" name="" id="">
+              <button class="btn">Cancel</button>
+              <button class="modal_close_btn">close</button>
+            </form>
+          </dialog> -->
+
+        </div>              
+
+      </div>
+    </a>
+
+    <a href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
+      <div class="recipe_card">
+  
+        <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
+  
+        <div class="recipe_card_info_container">
+          <h5 class="recipe_card_category">Mains & Galettes</h5>
+          <h4 class="recipe_card_title">Heirloom Tomato Galette</h4>
+          <p class="recipe_card_time">Oct 12, 2023 • 45 mins</p>
+  
+          <div class="recipe_card_icons_flex_group">
+  
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+  
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+  
+          </div>
+        </div>              
+  
+      </div>
+    </a>
+
+    <a href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
+      <div class="recipe_card">
+  
+        <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
+  
+        <div class="recipe_card_info_container">
+          <h5 class="recipe_card_category">Mains & Galettes</h5>
+          <h4 class="recipe_card_title">Heirloom Tomato Galette</h4>
+          <p class="recipe_card_time">Oct 12, 2023 • 45 mins</p>
+  
+          <div class="recipe_card_icons_flex_group">
+  
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+  
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+  
+          </div>
+        </div>              
+  
+      </div>
+    </a>
+
+    <a href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
+      <div class="recipe_card">
+  
+        <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
+  
+        <div class="recipe_card_info_container">
+          <h5 class="recipe_card_category">Mains & Galettes</h5>
+          <h4 class="recipe_card_title">Heirloom Tomato Galette</h4>
+          <p class="recipe_card_time">Oct 12, 2023 • 45 mins</p>
+  
+          <div class="recipe_card_icons_flex_group">
+  
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+  
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+  
+          </div>
+        </div>              
+  
+      </div>
+    </a>
+
+    <a href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
+      <div class="recipe_card">
+  
+        <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
+  
+        <div class="recipe_card_info_container">
+          <h5 class="recipe_card_category">Mains & Galettes</h5>
+          <h4 class="recipe_card_title">Heirloom Tomato Galette</h4>
+          <p class="recipe_card_time">Oct 12, 2023 • 45 mins</p>
+  
+          <div class="recipe_card_icons_flex_group">
+  
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+  
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+  
+          </div>
+        </div>              
+  
+      </div>
+    </a>
+
+    <a href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
+      <div class="recipe_card">
+  
+        <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
+  
+        <div class="recipe_card_info_container">
+          <h5 class="recipe_card_category">Mains & Galettes</h5>
+          <h4 class="recipe_card_title">Heirloom Tomato Galette</h4>
+          <p class="recipe_card_time">Oct 12, 2023 • 45 mins</p>
+  
+          <div class="recipe_card_icons_flex_group">
+  
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+  
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+  
+          </div>
+        </div>              
+  
+      </div>
+    </a>
+
+    <a href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
+      <div class="recipe_card">
+  
+        <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
+  
+        <div class="recipe_card_info_container">
+          <h5 class="recipe_card_category">Mains & Galettes</h5>
+          <h4 class="recipe_card_title">Heirloom Tomato Galette</h4>
+          <p class="recipe_card_time">Oct 12, 2023 • 45 mins</p>
+  
+          <div class="recipe_card_icons_flex_group">
+  
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+  
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+  
+          </div>
+        </div>              
+  
+      </div>
+    </a>
+
+    <a href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
+      <div class="recipe_card">
+  
+        <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
+  
+        <div class="recipe_card_info_container">
+          <h5 class="recipe_card_category">Mains & Galettes</h5>
+          <h4 class="recipe_card_title">Heirloom Tomato Galette</h4>
+          <p class="recipe_card_time">Oct 12, 2023 • 45 mins</p>
+  
+          <div class="recipe_card_icons_flex_group">
+  
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+  
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+  
+          </div>
+        </div>              
+  
+      </div>
+    </a>
 
-      <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
-
-      <div class="recipe_card_info_container">
-        <h5 class="recipe_card_category">Mains & Galettes</h5>
-        <h4 class="recipe_card_title">Heirloom Tomato Galette</h4>
-        <p class="recipe_card_time">Oct 12, 2023 • 45 mins</p>
-
-        <div class="recipe_card_icons_flex_group">
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-
-        </div>
-
-        <!-- Recipe Update Modal -->
-        <!-- <dialog class="recipe_update_modal">
-          <span>Recipe Update Modal</span>
-          <form action="">
-            <input type="text" name="" id="">
-            <button class="btn">Cancel</button>
-            <button class="modal_close_btn">close</button>
-          </form>
-        </dialog> -->
-
-      </div>              
-
-    </div>
-
-    <div class="recipe_card">
-
-      <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
-
-      <div class="recipe_card_info_container">
-        <h5 class="recipe_card_category">Mains & Galettes</h5>
-        <h4 class="recipe_card_title">Heirloom Tomato Galette</h4>
-        <p class="recipe_card_time">Oct 12, 2023 • 45 mins</p>
-
-        <div class="recipe_card_icons_flex_group">
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-
-        </div>
-      </div>              
-
-    </div>
-
-    <div class="recipe_card">
-
-      <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
-
-      <div class="recipe_card_info_container">
-        <h5 class="recipe_card_category">Mains & Galettes</h5>
-        <h4 class="recipe_card_title">Heirloom Tomato Galette</h4>
-        <p class="recipe_card_time">Oct 12, 2023 • 45 mins</p>
-
-        <div class="recipe_card_icons_flex_group">
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-
-        </div>
-      </div>              
-
-    </div>
-    
-    <div class="recipe_card">
-
-      <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
-
-      <div class="recipe_card_info_container">
-        <h5 class="recipe_card_category">Mains & Galettes</h5>
-        <h4 class="recipe_card_title">Heirloom Tomato Galette</h4>
-        <p class="recipe_card_time">Oct 12, 2023 • 45 mins</p>
-
-        <div class="recipe_card_icons_flex_group">
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-
-        </div>
-      </div>              
-
-    </div>
-
-    <div class="recipe_card">
-
-      <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
-
-      <div class="recipe_card_info_container">
-        <h5 class="recipe_card_category">Mains & Galettes</h5>
-        <h4 class="recipe_card_title">Heirloom Tomato Galette</h4>
-        <p class="recipe_card_time">Oct 12, 2023 • 45 mins</p>
-
-        <div class="recipe_card_icons_flex_group">
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-
-        </div>
-      </div>              
-
-    </div>
-
-    <div class="recipe_card">
-
-      <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
-
-      <div class="recipe_card_info_container">
-        <h5 class="recipe_card_category">Mains & Galettes</h5>
-        <h4 class="recipe_card_title">Heirloom Tomato Galette</h4>
-        <p class="recipe_card_time">Oct 12, 2023 • 45 mins</p>
-
-        <div class="recipe_card_icons_flex_group">
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-
-        </div>
-      </div>              
-
-    </div>
-
-    <div class="recipe_card">
-
-      <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
-
-      <div class="recipe_card_info_container">
-        <h5 class="recipe_card_category">Mains & Galettes</h5>
-        <h4 class="recipe_card_title">Heirloom Tomato Galette</h4>
-        <p class="recipe_card_time">Oct 12, 2023 • 45 mins</p>
-
-        <div class="recipe_card_icons_flex_group">
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-
-        </div>
-      </div>              
-
-    </div>
-
-    <div class="recipe_card">
-
-      <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
-
-      <div class="recipe_card_info_container">
-        <h5 class="recipe_card_category">Mains & Galettes</h5>
-        <h4 class="recipe_card_title">Heirloom Tomato Galette</h4>
-        <p class="recipe_card_time">Oct 12, 2023 • 45 mins</p>
-
-        <div class="recipe_card_icons_flex_group">
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-
-        </div>
-      </div>              
-
-    </div>
 
   </div>
 

@@ -1,50 +1,36 @@
 import os
-from flask import Flask, render_template
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+from app.database import db_session
+from config import Config
 
-def create_app(test_config=None):
+
+db = SQLAlchemy()
+migrate = Migrate()
+
+def create_app(config_class=Config):
     # create and configure the app
-    app = Flask(__name__, instance_relative_config=True)
-    app.config.from_mapping(
-        SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
-    )
+    app = Flask(__name__)
+    app.config.from_object(config_class)
 
-    if test_config is None:
-        # load the instance config, if it exists, when not testing
-        app.config.from_pyfile('config.py', silent=True)
-    else:
-        # load the test config if passed in
-        app.config.from_mapping(test_config)
+    db.init_app(app)
+    migrate.init_app(app, db)
 
     # ensure the instance folder exists
     os.makedirs(app.instance_path, exist_ok=True)
 
-    # a simple page that says hello
-    @app.route('/')
-    def home():
-        return render_template('index.html')
-
-    @app.route('/recipes')
-    def recipes_list():
-        return render_template('recipes_list.html')
-
-    @app.route('/recipe/<int:recipe_id>')
-    def recipe_detail(recipe_id):
-        # TODO: use post_id to fetch post from db
-        return render_template('recipe_detail.html')
-
-    @app.route('/dashboard')
-    def dashboard_home():
-        return render_template('dashboard/index.html')
-
-    @app.route('/dashboard/<int:recipe_id>')
-    def dashboard_recipe_detail(recipe_id):
-        return render_template('dashboard/recipe_detail.html')
-
-    from . import db
-    db.init_app(app)
+    from app.main import bp as main_bp
+    app.register_blueprint(main_bp)
 
     from . import auth
-    app.register_blueprint(auth.bp)
+    app.register_blueprint(auth.bp, url_prefix='/auth')
+
+    from .dashboard import bp as dashboard_bp
+    app.register_blueprint(dashboard_bp, url_prefix='/dashboard') 
+    
+    @app.teardown_appcontext
+    def shutdown_session(exception=None):
+        db_session.remove()
 
     return app
