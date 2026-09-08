@@ -77,6 +77,10 @@ body {
   display: flex;
 }
 
+.nav__title__link {
+  text-decoration: none;
+}
+
 .nav__title {
   color: rgba(86, 100, 43, 1);
   font-size: 1.75rem;
