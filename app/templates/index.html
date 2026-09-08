@@ -29,7 +29,7 @@
 
         <div class="recipe__grid">
           
-          <!-- RECIPES FROm DB CONTEXT -->
+          <!-- RECIPES FROM DB CONTEXT -->
           {% for recipe in recipes %}
           <div class="recipe__card homepage_recipe_card">
             <div class="recipe_image">
@@ -53,7 +53,9 @@
 
               <h3 class="collection__title">{{ recipe.title }}</h3>
   
-              <p class="collection__description">{{ recipe.description | truncate(80, end='...') }}</p>
+              <p class="collection__description">
+                {{ recipe.description | truncate(80, end='...') }}
+              </p>
             </div>
 
 

@@ -260,6 +260,16 @@ body {
   @media (min-width: 992px) { display: grid; }
 }
 
+.recipe__card__detail_link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.recipe__card__detail_link:hover {
+  opacity: 0.9;
+  transition: 0.3s;
+}
+
 .recipe__card {
   display: grid;  
   max-width: fit-content;

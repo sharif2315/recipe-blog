@@ -12,7 +12,8 @@ def home():
 
 @bp.route('/recipes')
 def recipes_list():
-    return render_template('recipes_list.html')
+    recipes = Recipe.query.all()
+    return render_template('recipes_list.html', recipes=recipes)
 
 @bp.route('/recipes/<int:recipe_id>')
 def recipe_detail(recipe_id):

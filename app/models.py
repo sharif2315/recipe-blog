@@ -39,7 +39,10 @@ class RecipeDifficulty(str, Enum):
 # Ingredient -> name, order/rank -> 1 to many
 # PreperationStep -> name, description, order/rank -> 1 to many
 # Collection -> 1 to many
-# add field: dietary to Recipe -> Many to Many
+
+# Add fields to existing model
+# dietary to Recipe -> Many to Many
+# image to Recipe -> 1 to 1
 
 class Recipe(db.Model):
     id: so.Mapped[int] = so.mapped_column(primary_key=True)
