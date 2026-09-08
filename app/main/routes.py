@@ -1,12 +1,14 @@
 from flask import render_template, flash, redirect
 from app.main import bp
 from app.auth.forms import LoginForm
+from app.models import Recipe
 
 
 # a simple page that says hello
 @bp.route('/')
 def home():
-    return render_template('index.html')
+    recipes = Recipe.query.all()
+    return render_template('index.html', recipes=recipes)
 
 @bp.route('/recipes')
 def recipes_list():
