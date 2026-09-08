@@ -13,15 +13,17 @@
 
   <div class="recipes_grid">
 
-    <a href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
+    <!-- RECIPES FROM DB CONTEXT -->
+    {% for recipe in recipes %}
+    <a style="text-decoration:none;" href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
       <div class="recipe_card">
 
         <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
 
         <div class="recipe_card_info_container">
           <h5 class="recipe_card_category">Mains & Galettes</h5>
-          <h4 class="recipe_card_title">Heirloom Tomato Galette</h4>
-          <p class="recipe_card_time">Oct 12, 2023 • 45 mins</p>
+          <h4 class="recipe_card_title">{{ recipe.title }}</h4>
+          <p class="recipe_card_time">{{ recipe.timestamp.strftime('%b %d, %Y') }} • {{ recipe.duration }} mins</p>
 
           <div class="recipe_card_icons_flex_group">
 
@@ -45,8 +47,9 @@
 
       </div>
     </a>
+    {% endfor %}
 
-    <a href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
+    <a style="text-decoration:none;" href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
       <div class="recipe_card">
   
         <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
@@ -68,7 +71,7 @@
       </div>
     </a>
 
-    <a href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
+    <a style="text-decoration:none;" href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
       <div class="recipe_card">
   
         <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
@@ -90,7 +93,7 @@
       </div>
     </a>
 
-    <a href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
+    <a style="text-decoration:none;" href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
       <div class="recipe_card">
   
         <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
@@ -112,7 +115,7 @@
       </div>
     </a>
 
-    <a href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
+    <a style="text-decoration:none;" href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
       <div class="recipe_card">
   
         <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
@@ -134,7 +137,7 @@
       </div>
     </a>
 
-    <a href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
+    <a style="text-decoration:none;" href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
       <div class="recipe_card">
   
         <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
@@ -156,7 +159,7 @@
       </div>
     </a>
 
-    <a href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
+    <a style="text-decoration:none;" href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
       <div class="recipe_card">
   
         <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
@@ -178,7 +181,7 @@
       </div>
     </a>
 
-    <a href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
+    <a style="text-decoration:none;" href="{{ url_for('dashboard.recipe_detail', recipe_id=1) }}">
       <div class="recipe_card">
   
         <img src="{{ url_for('static', filename='images/pizza-tomato.webp') }}" alt="" class="recipe_card_image">
