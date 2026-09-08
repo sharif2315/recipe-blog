@@ -267,6 +267,9 @@ body {
 .recipe__card__detail_link {
   color: inherit;
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;  
 }
 
 .recipe__card__detail_link:hover {
@@ -275,9 +278,12 @@ body {
 }
 
 .recipe__card {
-  display: grid;  
-  max-width: fit-content;
-  background-color: #ffffff;
+  display: flex; /* Changed from grid to flex for easier vertical alignment */
+  flex-direction: column;
+  height: 100%;
+  flex: 1; /* Stretches card to fill <a> wrapper height */
+  width: 100%; /* REMOVED max-width: fit-content */
+  background-color: #ffffff;  
 }
 
 .recipe_image {

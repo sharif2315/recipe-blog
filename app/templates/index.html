@@ -24,136 +24,144 @@
         
         <div class="category-link_flex-group">
           <h2 class="category-title">Autumn Foundations</h2>
-          <a class="link_view_all" href="#">View Collection</a>
+          <a class="link_view_all" href="{{ url_for('main.recipe_detail', recipe_id=1) }}" class="recipe__card__detail_link">View Collection</a>
         </div>
 
         <div class="recipe__grid">
           
           <!-- RECIPES FROM DB CONTEXT -->
           {% for recipe in recipes %}
-          <div class="recipe__card homepage_recipe_card">
-            <div class="recipe_image">
-              <img src="{{ url_for('static', filename='images/roasted-harvest-salad.png') }}" alt="">
-            </div>
-
-            <div class="recipe_card__info_container">
-              <div class="collection__labels">
-                
-                <div class="collection__label__time">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
-                  <p>{{ recipe.duration }} min</p>
-                </div>
-  
-                <div class="collection__label__difficulty">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
-                  <p>{{ recipe.difficulty.value }}</p>
-                </div>
-                
+          <a href="{{ url_for('main.recipe_detail', recipe_id=1) }}" class="recipe__card__detail_link" >
+            <div class="recipe__card homepage_recipe_card">
+              <div class="recipe_image">
+                <img src="{{ url_for('static', filename='images/roasted-harvest-salad.png') }}" alt="">
               </div>
-
-              <h3 class="collection__title">{{ recipe.title }}</h3>
   
-              <p class="collection__description">
-                {{ recipe.description | truncate(80, end='...') }}
-              </p>
+              <div class="recipe_card__info_container">
+                <div class="collection__labels">
+                  
+                  <div class="collection__label__time">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
+                    <p>{{ recipe.duration }} min</p>
+                  </div>
+    
+                  <div class="collection__label__difficulty">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
+                    <p>{{ recipe.difficulty.value }}</p>
+                  </div>
+                  
+                </div>
+  
+                <h3 class="collection__title">{{ recipe.title }}</h3>
+    
+                <p class="collection__description">
+                  {{ recipe.description | truncate(80, end='...') }}
+                </p>
+              </div>
+  
+  
             </div>
-
-
-          </div>
+          </a>
           {% endfor %}
 
           <!-- RECIPE 1 -->
-          <div class="recipe__card homepage_recipe_card">
-            <div class="recipe_image">
-              <img src="{{ url_for('static', filename='images/roasted-harvest-salad.png') }}" alt="">
-            </div>
-
-            <div class="recipe_card__info_container">
-              <div class="collection__labels">
-                
-                <div class="collection__label__time">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
-                  <p>45 min</p>
-                </div>
-  
-                <div class="collection__label__difficulty">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
-                  <p>Intermediate</p>
-                </div>
-                
+          <a href="{{ url_for('main.recipe_detail', recipe_id=1) }}" class="recipe__card__detail_link">
+            <div class="recipe__card homepage_recipe_card">
+              <div class="recipe_image">
+                <img src="{{ url_for('static', filename='images/roasted-harvest-salad.png') }}" alt="">
               </div>
-
-              <h3 class="collection__title">Roasted Harvest Salad</h3>
   
-              <p class="collection__description">
-                A celebration of texture and tone, pairing earthy squash...
-              </p>
+              <div class="recipe_card__info_container">
+                <div class="collection__labels">
+                  
+                  <div class="collection__label__time">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
+                    <p>45 min</p>
+                  </div>
+    
+                  <div class="collection__label__difficulty">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
+                    <p>Intermediate</p>
+                  </div>
+                  
+                </div>
+  
+                <h3 class="collection__title">Roasted Harvest Salad</h3>
+    
+                <p class="collection__description">
+                  A celebration of texture and tone, pairing earthy squash...
+                </p>
+              </div>
+  
+  
             </div>
-
-
-          </div>
+          </a> 
 
           <!-- RECIPE 2 -->
-          <div class="recipe__card homepage_recipe_card">
-            <div class="recipe_image">
-              <img src="{{ url_for('static', filename='images/intentional-sourdough.png') }}" alt="">
-            </div>
-
-            <div class="recipe_card__info_container">
-              <div class="collection__labels">
-                
-                <div class="collection__label__time">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
-                  <p>24 Hours</p>
-                </div>
-  
-                <div class="collection__label__difficulty">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
-                  <p>Advanced</p>
-                </div>
-                
+          <a href="{{ url_for('main.recipe_detail', recipe_id=1) }}" class="recipe__card__detail_link">
+            <div class="recipe__card homepage_recipe_card">
+              <div class="recipe_image">
+                <img src="{{ url_for('static', filename='images/intentional-sourdough.png') }}" alt="">
               </div>
-
-              <h3 class="collection__title">Intentional Sourdough</h3>
   
-              <p class="collection__description">
-                The ultimate lesson in patience. Mastering the sourdough rhythm a...
-              </p>
+              <div class="recipe_card__info_container">
+                <div class="collection__labels">
+                  
+                  <div class="collection__label__time">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
+                    <p>24 Hours</p>
+                  </div>
+    
+                  <div class="collection__label__difficulty">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
+                    <p>Advanced</p>
+                  </div>
+                  
+                </div>
+  
+                <h3 class="collection__title">Intentional Sourdough</h3>
+    
+                <p class="collection__description">
+                  The ultimate lesson in patience. Mastering the sourdough rhythm a...
+                </p>
+              </div>
+  
+  
             </div>
-
-
-          </div>
+          </a> 
 
           <!-- RECIPE 3 -->
-          <div class="recipe__card homepage_recipe_card">
-            <div class="recipe_image">
-              <img src="{{ url_for('static', filename='images/golden-bone-broth.png') }}" alt="">
-            </div>
-
-            <div class="recipe_card__info_container">
-              <div class="collection__labels">
-                
-                <div class="collection__label__time">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
-                  <p>12 HRS</p>
-                </div>
-  
-                <div class="collection__label__difficulty">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
-                  <p>Beginner</p>
-                </div>
-                
+          <a href="{{ url_for('main.recipe_detail', recipe_id=1) }}" class="recipe__card__detail_link">
+            <div class="recipe__card homepage_recipe_card">
+              <div class="recipe_image">
+                <img src="{{ url_for('static', filename='images/golden-bone-broth.png') }}" alt="">
               </div>
-
-              <h3 class="collection__title">Golden Bone Broth</h3>
   
-              <p class="collection__description">
-                A slow-simmered foundation for winter wellness and deep flavor.
-              </p>
+              <div class="recipe_card__info_container">
+                <div class="collection__labels">
+                  
+                  <div class="collection__label__time">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
+                    <p>12 HRS</p>
+                  </div>
+    
+                  <div class="collection__label__difficulty">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
+                    <p>Beginner</p>
+                  </div>
+                  
+                </div>
+  
+                <h3 class="collection__title">Golden Bone Broth</h3>
+    
+                <p class="collection__description">
+                  A slow-simmered foundation for winter wellness and deep flavor.
+                </p>
+              </div>
+  
+  
             </div>
-
-
-          </div>
+          </a> 
           
         </div>
       
@@ -164,103 +172,109 @@
         
         <div class="category-link_flex-group">
           <h2 class="category-title">Autumn Foundations</h2>
-          <a class="link_view_all" href="#">View Collection</a>
+          <a class="link_view_all" href="{{ url_for('main.recipe_detail', recipe_id=1) }}" class="recipe__card__detail_link">View Collection</a>
         </div>
 
         <div class="recipe__grid">
           
           <!-- RECIPE 1 -->
-          <div class="recipe__card homepage_recipe_card">
-            <div class="recipe_image">
-              <img src="{{ url_for('static', filename='images/roasted-harvest-salad.png') }}" alt="">
-            </div>
-
-            <div class="recipe_card__info_container">
-              <div class="collection__labels">
-                
-                <div class="collection__label__time">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
-                  <p>45 min</p>
-                </div>
-  
-                <div class="collection__label__difficulty">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
-                  <p>Intermediate</p>
-                </div>
-                
-              </div>
-
-              <h3 class="collection__title">Roasted Harvest Salad</h3>
-  
-              <p class="collection__description">
-                A celebration of texture and tone, pairing earthy squash...
-              </p>
-            </div>
-
-
-          </div>
+           <a href="{{ url_for('main.recipe_detail', recipe_id=1) }}" class="recipe__card__detail_link">
+             <div class="recipe__card homepage_recipe_card">
+               <div class="recipe_image">
+                 <img src="{{ url_for('static', filename='images/roasted-harvest-salad.png') }}" alt="">
+               </div>
+   
+               <div class="recipe_card__info_container">
+                 <div class="collection__labels">
+                   
+                   <div class="collection__label__time">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
+                     <p>45 min</p>
+                   </div>
+     
+                   <div class="collection__label__difficulty">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
+                     <p>Intermediate</p>
+                   </div>
+                   
+                 </div>
+   
+                 <h3 class="collection__title">Roasted Harvest Salad</h3>
+     
+                 <p class="collection__description">
+                   A celebration of texture and tone, pairing earthy squash...
+                 </p>
+               </div>
+   
+   
+             </div>
+           </a>
 
           <!-- RECIPE 2 -->
-          <div class="recipe__card homepage_recipe_card">
-            <div class="recipe_image">
-              <img src="{{ url_for('static', filename='images/intentional-sourdough.png') }}" alt="">
-            </div>
-
-            <div class="recipe_card__info_container">
-              <div class="collection__labels">
-                
-                <div class="collection__label__time">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
-                  <p>24 Hours</p>
-                </div>
-  
-                <div class="collection__label__difficulty">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
-                  <p>Advanced</p>
-                </div>
-                
-              </div>
-
-              <h3 class="collection__title">Intentional Sourdough</h3>
-  
-              <p class="collection__description">
-                The ultimate lesson in patience. Mastering the sourdough rhythm a...
-              </p>
-            </div>
-
-
-          </div>
+           <a href="{{ url_for('main.recipe_detail', recipe_id=1) }}" class="recipe__card__detail_link">
+             <div class="recipe__card homepage_recipe_card">
+               <div class="recipe_image">
+                 <img src="{{ url_for('static', filename='images/intentional-sourdough.png') }}" alt="">
+               </div>
+   
+               <div class="recipe_card__info_container">
+                 <div class="collection__labels">
+                   
+                   <div class="collection__label__time">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
+                     <p>24 Hours</p>
+                   </div>
+     
+                   <div class="collection__label__difficulty">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
+                     <p>Advanced</p>
+                   </div>
+                   
+                 </div>
+   
+                 <h3 class="collection__title">Intentional Sourdough</h3>
+     
+                 <p class="collection__description">
+                   The ultimate lesson in patience. Mastering the sourdough rhythm a...
+                 </p>
+               </div>
+   
+   
+             </div>
+           </a>
 
           <!-- RECIPE 3 -->
-          <div class="recipe__card homepage_recipe_card">
-            <div class="recipe_image">
-              <img src="{{ url_for('static', filename='images/golden-bone-broth.png') }}" alt="">
-            </div>
-
-            <div class="recipe_card__info_container">
-              <div class="collection__labels">
-                
-                <div class="collection__label__time">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
-                  <p>12 HRS</p>
-                </div>
-  
-                <div class="collection__label__difficulty">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
-                  <p>Beginner</p>
-                </div>
-                
-              </div>
-
-              <h3 class="collection__title">Golden Bone Broth</h3>
-  
-              <p class="collection__description">
-                A slow-simmered foundation for winter wellness and deep flavor.
-              </p>
-            </div>
-
-
-          </div>
+           <a href="{{ url_for('main.recipe_detail', recipe_id=1) }}" class="recipe__card__detail_link">
+             <div class="recipe__card homepage_recipe_card">
+               <div class="recipe_image">
+                 <img src="{{ url_for('static', filename='images/golden-bone-broth.png') }}" alt="">
+               </div>
+   
+               <div class="recipe_card__info_container">
+                 <div class="collection__labels">
+                   
+                   <div class="collection__label__time">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
+                     <p>12 HRS</p>
+                   </div>
+     
+                   <div class="collection__label__difficulty">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
+                     <p>Beginner</p>
+                   </div>
+                   
+                 </div>
+   
+                 <h3 class="collection__title">Golden Bone Broth</h3>
+     
+                 <p class="collection__description">
+                   A slow-simmered foundation for winter wellness and deep flavor.
+                 </p>
+               </div>
+   
+   
+             </div>
+           </a>
           
         </div>
       
@@ -271,103 +285,109 @@
         
         <div class="category-link_flex-group">
           <h2 class="category-title">Autumn Foundations</h2>
-          <a class="link_view_all" href="#">View Collection</a>
+          <a class="link_view_all" href="{{ url_for('main.recipe_detail', recipe_id=1) }}" class="recipe__card__detail_link">View Collection</a>
         </div>
 
         <div class="recipe__grid">
           
           <!-- RECIPE 1 -->
-          <div class="recipe__card homepage_recipe_card">
-            <div class="recipe_image">
-              <img src="{{ url_for('static', filename='images/roasted-harvest-salad.png') }}" alt="">
-            </div>
-
-            <div class="recipe_card__info_container">
-              <div class="collection__labels">
-                
-                <div class="collection__label__time">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
-                  <p>45 min</p>
-                </div>
-  
-                <div class="collection__label__difficulty">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
-                  <p>Intermediate</p>
-                </div>
-                
-              </div>
-
-              <h3 class="collection__title">Roasted Harvest Salad</h3>
-  
-              <p class="collection__description">
-                A celebration of texture and tone, pairing earthy squash...
-              </p>
-            </div>
-
-
-          </div>
+           <a href="{{ url_for('main.recipe_detail', recipe_id=1) }}" class="recipe__card__detail_link">
+             <div class="recipe__card homepage_recipe_card">
+               <div class="recipe_image">
+                 <img src="{{ url_for('static', filename='images/roasted-harvest-salad.png') }}" alt="">
+               </div>
+   
+               <div class="recipe_card__info_container">
+                 <div class="collection__labels">
+                   
+                   <div class="collection__label__time">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
+                     <p>45 min</p>
+                   </div>
+     
+                   <div class="collection__label__difficulty">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
+                     <p>Intermediate</p>
+                   </div>
+                   
+                 </div>
+   
+                 <h3 class="collection__title">Roasted Harvest Salad</h3>
+     
+                 <p class="collection__description">
+                   A celebration of texture and tone, pairing earthy squash...
+                 </p>
+               </div>
+   
+   
+             </div>
+           </a>
 
           <!-- RECIPE 2 -->
-          <div class="recipe__card homepage_recipe_card">
-            <div class="recipe_image">
-              <img src="{{ url_for('static', filename='images/intentional-sourdough.png') }}" alt="">
-            </div>
-
-            <div class="recipe_card__info_container">
-              <div class="collection__labels">
-                
-                <div class="collection__label__time">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
-                  <p>24 Hours</p>
-                </div>
-  
-                <div class="collection__label__difficulty">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
-                  <p>Advanced</p>
-                </div>
-                
-              </div>
-
-              <h3 class="collection__title">Intentional Sourdough</h3>
-  
-              <p class="collection__description">
-                The ultimate lesson in patience. Mastering the sourdough rhythm a...
-              </p>
-            </div>
-
-
-          </div>
+           <a href="{{ url_for('main.recipe_detail', recipe_id=1) }}" class="recipe__card__detail_link">
+             <div class="recipe__card homepage_recipe_card">
+               <div class="recipe_image">
+                 <img src="{{ url_for('static', filename='images/intentional-sourdough.png') }}" alt="">
+               </div>
+   
+               <div class="recipe_card__info_container">
+                 <div class="collection__labels">
+                   
+                   <div class="collection__label__time">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
+                     <p>24 Hours</p>
+                   </div>
+     
+                   <div class="collection__label__difficulty">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
+                     <p>Advanced</p>
+                   </div>
+                   
+                 </div>
+   
+                 <h3 class="collection__title">Intentional Sourdough</h3>
+     
+                 <p class="collection__description">
+                   The ultimate lesson in patience. Mastering the sourdough rhythm a...
+                 </p>
+               </div>
+   
+   
+             </div>
+           </a>
 
           <!-- RECIPE 3 -->
-          <div class="recipe__card homepage_recipe_card">
-            <div class="recipe_image">
-              <img src="{{ url_for('static', filename='images/golden-bone-broth.png') }}" alt="">
-            </div>
-
-            <div class="recipe_card__info_container">
-              <div class="collection__labels">
-                
-                <div class="collection__label__time">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
-                  <p>12 HRS</p>
-                </div>
-  
-                <div class="collection__label__difficulty">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
-                  <p>Beginner</p>
-                </div>
-                
-              </div>
-
-              <h3 class="collection__title">Golden Bone Broth</h3>
-  
-              <p class="collection__description">
-                A slow-simmered foundation for winter wellness and deep flavor.
-              </p>
-            </div>
-
-
-          </div>
+           <a href="{{ url_for('main.recipe_detail', recipe_id=1) }}" class="recipe__card__detail_link">
+             <div class="recipe__card homepage_recipe_card">
+               <div class="recipe_image">
+                 <img src="{{ url_for('static', filename='images/golden-bone-broth.png') }}" alt="">
+               </div>
+   
+               <div class="recipe_card__info_container">
+                 <div class="collection__labels">
+                   
+                   <div class="collection__label__time">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock5-icon lucide-clock-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
+                     <p>12 HRS</p>
+                   </div>
+     
+                   <div class="collection__label__difficulty">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed-icon lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
+                     <p>Beginner</p>
+                   </div>
+                   
+                 </div>
+   
+                 <h3 class="collection__title">Golden Bone Broth</h3>
+     
+                 <p class="collection__description">
+                   A slow-simmered foundation for winter wellness and deep flavor.
+                 </p>
+               </div>
+   
+   
+             </div>
+           </a>
           
         </div>
       
