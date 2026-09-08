@@ -1392,3 +1392,15 @@ body {
 .recipe_image__outer:hover .recipe_image__overlay {
   opacity: 1;
 }
+
+.form_container {
+  margin-top: 3rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_container form {
+  display: grid;
+  gap: .75rem;
+}
