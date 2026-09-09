@@ -58,6 +58,7 @@ class Recipe(db.Model):
         sa.ForeignKey(User.id), index=True
     )
     author: so.Mapped[User] = so.relationship(back_populates='recipes')
+    image_filename: so.Mapped[Optional[str]] = so.mapped_column(sa.String(255), nullable=True)
 
     def _repr__(self):
         return '<Post {}'.format(self.body)

@@ -18,6 +18,10 @@ class Config:
         db_url = db_url.replace("postgres://", "postgresql://", 1)
 
     SQLALCHEMY_DATABASE_URI = db_url or 'sqlite:///' + os.path.join(basedir, 'app.db')
+    S3_ENDPOINT_URL = os.environ.get('S3_ENDPOINT_URL', 'http://localhost:9000')
+    S3_ACCESS_KEY = os.environ.get('S3_ACCESS_KEY')
+    S3_SECRET_KEY = os.environ.get('S3_SECRET_KEY')
+    S3_BUCKET_NAME = os.environ.get('S3_BUCKET_NAME')
 
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
     MAIL_SERVER = os.environ.get('MAIL_SERVER')
